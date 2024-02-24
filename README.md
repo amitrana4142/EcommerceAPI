@@ -1,5 +1,5 @@
 "# EcommerceAPI"
-"# To run this project add following parametters in .env file"
+"# To run this project add the following parameters in .env file"
 
 "#
 PORT={PORTNUMBER}
