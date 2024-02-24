@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -39,46 +38,4 @@ db.sequelize = sequelize;
 
 module.exports = db;
 
-=======
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
-//const Sequelize= require('sequelize');
-const dotenv= require('dotenv')
-dotenv.config();
-const db={}
-
-const sequelize= new Sequelize(process.env.DATABASENAME,process.env.DBUSERNAME,process.env.DBPASSWORD,
-    
-    {
-        dialect:process.env.DB
-
-    }
-    );
-
-   
-fs
-.readdirSync(__dirname)
-.filter(file => {
-  return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-})
-.forEach(file => {
-  const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-  db[model.name] = model;
-});
-
-Object.keys(db).forEach(modelName => {
-if (db[modelName].associate) {
-  db[modelName].associate(db);
-}
-});
-
-db.sequelize = sequelize;
-//db.Sequelize = Sequelize;
-
-
-module.exports = db;
-
->>>>>>> e40d90e41af28d1659d79ff8df1d76a41a5416ab
     
